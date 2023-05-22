@@ -1,0 +1,101 @@
+\documentclass{article}[10pt]
+\usepackage{lipsum}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{placeins}
+\usepackage[version=4]{mhchem}
+\usepackage{subfiles}
+\usepackage{multicol,caption}
+\usepackage{textgreek}
+\usepackage{geometry}
+\usepackage{url}
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\makeatletter
+
+\makeatother
+\usepackage{pgf}
+\usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+\begin{document}
+
+  % Cover Page
+  % \thispagestyle{empty}
+  % \begin{center}
+  % \begin{minipage}{0.75\linewidth}
+  %     \centering
+  %     %\includegraphics[width=0.3\linewidth]{logo.pdf}
+  %     %\rule{0.4\linewidth}{0.15\linewidth}\par
+  %     \vspace{3cm}
+  %     {\uppercase{\Large \textbf{Multi-Wire Proportional Counter (MWPC) - A Position Sensitive Detector for Fission Fragment Detection}\par}}
+  %     \vspace{3cm}
+  %     {\Large \textbf{\textit{Meemik Roy}} \\ B.Sc. Hons Physics \\ Sri Venkateswara College \\ Delhi University\par}
+  %     \vspace{3cm}
+
+  %     {\Large Under the guidance of  \\ \textbf{\textit{Mr. Saneesh N}} \\ Scientist \\ Inter University Accelerator Centre (IUAC)\par}
+  %     \vspace{3cm}
+  %     \date{}
+  % \end{minipage}
+  % \end{center}
+  % \clearpage
+
+
+  \newpage
+  \tableofcontents
+  \newpage
+
+  \section{Introduction}
+    \textit{\textbf{Radiation}} is used in various fields, including medical treatment, industry, and research. 
+    Radiation is a form of energy that can have both beneficial and harmful effects on living organisms.
+    Therefore, it is important to accurately measure and monitor the levels of radiation to which individuals are exposed.
+    Radiation exposure is a major concern in various fields, including medical treatment, industry, and research. Accurate 
+    measurement and monitoring of radiation levels are crucial to prevent the harmful effects of radiation exposure.
+    It is crucial to accurately measure and monitor radiation doses to ensure the safety of 
+    individuals working with radiation sources and to evaluate the potential risks associated with radiation exposure. 
+    \textit{\textbf{Thermoluminescence dosimetry (TLD)}} is a well-established technique that provides reliable and precise measurements 
+    of ionizing radiation doses. TLDs use a variety of materials that emit light when exposed to ionizing radiation. 
+    Among these materials, nanophosphors show promising properties that make them a potential candidate for use in TLDs. 
+    The aim of this research is to investigate the thermoluminescent properties of synthesized nanophosphors for use in radiation dosimetry. 
+    
+    \subsection{\large Radiation}
+
+      \subfile{sections/introduction/radiation}
+    
+    \subsection{\large Radiation Dosimetry}
+      \subfile{sections/introduction/dosimetry}
+
+    \subsection{\large Thermoluminescence Dosimetry}
+        \subfile{sections/introduction/tl}
+
+  
+  \newpage
+  \bibliographystyle{plain}
+  \bibliography{references}
+\end{document}
