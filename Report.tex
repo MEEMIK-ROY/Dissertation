@@ -29,8 +29,7 @@
   \edef\pgfpageoptionborder{0pt}
 }
 {
-  \pgfpagesphysicalpageoptions
-  {%
+  \pgfpagesphysicalpageoptions{%
     logical pages=1,%
   }
   \pgfpageslogicalpageoptions{1}
@@ -71,7 +70,8 @@
   \newpage
   \tableofcontents
   \newpage
-
+  \listoffigures
+  \newpage
   \section{Introduction}
     \subfile{sections/introduction/introduction}
   \newpage
@@ -79,7 +79,7 @@
   \section{Synthesis and Characterization of Nanophosphors}
     \subfile{sections/synthesisAndCharacter/synthesisAndCharacter}
   \newpage
-  
+
   \bibliographystyle{plain}
   \bibliography{references}
 \end{document}
