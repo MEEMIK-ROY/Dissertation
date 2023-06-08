@@ -9,6 +9,9 @@
 \usepackage{textgreek}
 \usepackage{geometry}
 \usepackage{url}
+\usepackage[version=4]{mhchem}
+\usepackage{chemformula}
+\usepackage{multicol}
 \newenvironment{Figure}
   {\par\medskip\noindent\minipage{\linewidth}}
   {\endminipage\par\medskip}
@@ -41,6 +44,15 @@
     center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
   }%
 }
+% \usepackage{etoolbox}
+% \patchcmd{\abstract}{\titlepage}{\titlepage% Insert ToC-writing after starting a titlepage
+%   \addcontentsline{toc}{chapter}{Abstract}}{}{}
+% \setcounter{secnumdepth}{3}
+% \setcounter{tocdepth}{3}
+
+\usepackage{abstract}
+\renewcommand{\abstractnamefont}{\normalfont\Large\bfseries}
+\renewcommand{\abstracttextfont}{\normalfont\Huge}
 
 \pgfpagesuselayout{boxed}
 \setcounter{page}{2}
@@ -73,13 +85,35 @@
   \listoffigures
 
   \newpage
+  \section*{\centering \huge Certificate}
+  \addcontentsline{toc}{section}{Certificate}
+    \subfile{sections/certificate}
+
+  \newpage
+  \section*{\centering \huge Acknowledgement}
+  \addcontentsline{toc}{section}{Acknowledgement}
+    \subfile{sections/acknowledgement}
+
+  \newpage
+  \section*{\centering \Large Abstract}
+  \addcontentsline{toc}{section}{Abstract}
+    \subfile{sections/abstract}
+
+  \newpage
   \section{Introduction}
     \subfile{sections/introduction/introduction}
 
   \newpage
   \section{Synthesis and Characterization of Nanophosphors}
     \subfile{sections/synthesisAndCharacter/synthesisAndCharacter}
+  
+  \newpage
+  \section{Experiment}
+    \subfile{sections/experiment/experiment}
 
+  \newpage
+  \section{Result and Analysis}
+    \subfile{sections/result/result}
   \newpage
   \bibliographystyle{plain}
   \bibliography{references}
